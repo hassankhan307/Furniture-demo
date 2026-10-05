@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Order | Nestora</title>
+  <meta name="description" content="Provide your delivery information and confirm your furniture order securely with Nestora via WhatsApp.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="header-brand" aria-label="Nestora Home">
+        <img src="assets/logo/logo.svg" alt="Nestora - Furniture That Feels Like Home" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="shop.html?category=Living+Room" class="nav-link">Living Room</a></li>
+          <li><a href="shop.html?category=Bedroom" class="nav-link">Bedroom</a></li>
+          <li><a href="shop.html?category=Dining" class="nav-link">Dining</a></li>
+          <li><a href="shop.html?category=Office" class="nav-link">Office</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-action-btn btn-open-search" aria-label="Open Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <a href="shop.html?wishlist=true" class="icon-action-btn" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="badge-count wishlist-count-badge">0</span>
+        </a>
+
+        <a href="cart.html" class="icon-action-btn cart-icon-btn" aria-label="View Shopping Cart">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-text-count" style="font-size: 0.8125rem; font-weight: 600;">Cart (0)</span>
+        </a>
+
+        <button type="button" class="nav-toggle-btn" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <img src="assets/logo/logo.svg" alt="Nestora" style="height: 34px;">
+      <button type="button" class="btn-close-mobile-nav" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop All Furniture</a>
+      <a href="shop.html?category=Living+Room">Living Room</a>
+      <a href="shop.html?category=Bedroom">Bedroom</a>
+      <a href="shop.html?category=Dining">Dining</a>
+      <a href="shop.html?category=Office">Office</a>
+      <a href="shop.html?category=Outdoor">Outdoor</a>
+      <a href="shop.html?category=Storage">Storage</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact &amp; Showroom</a>
+    </nav>
+  </aside>
+
+  <!-- ==================== PAGE BANNER ==================== -->
+  <div class="page-banner">
+    <div class="container">
+      <span class="section-tagline">Secure Checkout</span>
+      <h1 id="checkout-main-title">Complete Your Order</h1>
+      <p>Confirm your delivery address and finalize your order directly through WhatsApp.</p>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CHECKOUT FORM & SUMMARY ==================== -->
+  <main class="checkout-section">
+    <div class="container">
+      
+      <!-- Checkout Active State View -->
+      <div id="checkout-active-view" class="checkout-layout">
+        
+        <!-- Left: Customer & Delivery Details Form -->
+        <section class="checkout-form-card" aria-labelledby="form-heading">
+          <form id="checkout-order-form" novalidate>
+            <h2 id="form-heading" class="checkout-block-title">Customer Details</h2>
+            
+            <div class="form-grid-2col">
+              <div class="form-group">
+                <label for="cust-name" class="form-label">Full Name <span class="req">*</span></label>
+                <input type="text" id="cust-name" class="form-control" placeholder="e.g. Hassan Khan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cust-email" class="form-label">Email Address <span class="req">*</span></label>
+                <input type="email" id="cust-email" class="form-control" placeholder="e.g. hassan@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2col">
+              <div class="form-group">
+                <label for="cust-phone" class="form-label">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="cust-phone" class="form-control" placeholder="e.g. 03001234567" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cust-whatsapp" class="form-label">WhatsApp Number <span class="req">*</span></label>
+                <input type="tel" id="cust-whatsapp" class="form-control" placeholder="e.g. 03001234567" required>
+              </div>
+            </div>
+
+            <h2 class="checkout-block-title" style="margin-top: 24px;">Delivery Information</h2>
+
+            <div class="delivery-badge-panel">
+              <div class="delivery-badge-title">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>White-Glove Home Delivery</span>
+              </div>
+              <span class="delivery-badge-price">PKR 2,000</span>
+            </div>
+
+            <div class="form-grid-2col">
+              <div class="form-group">
+                <label for="cust-city" class="form-label">City <span class="req">*</span></label>
+                <input type="text" id="cust-city" class="form-control" placeholder="e.g. Karachi / Lahore / Islamabad" required>
+              </div>
+
+              <div class="form-group">
+                <label for="cust-area" class="form-label">Area / Sector <span class="req">*</span></label>
+                <input type="text" id="cust-area" class="form-control" placeholder="e.g. Model Colony / DHA / Gulberg" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cust-address" class="form-label">Complete Delivery Address <span class="req">*</span></label>
+              <textarea id="cust-address" class="form-control" placeholder="House / Apartment #, Street, Block, Landmarks" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cust-notes" class="form-label">Order Notes &amp; Special Handling (Optional)</label>
+              <textarea id="cust-notes" class="form-control" placeholder="Elevator access, preferred delivery dates, or specific instructions..."></textarea>
+            </div>
+          </form>
+        </section>
+
+        <!-- Right: Order Summary -->
+        <aside class="order-summary-card" aria-labelledby="summary-heading">
+          <h2 id="summary-heading" class="summary-title">Order Summary</h2>
+
+          <div id="checkout-items-list" style="margin-bottom: 20px; max-height: 320px; overflow-y: auto;">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="co-subtotal">PKR 0</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Delivery Fee</span>
+            <strong id="co-delivery">PKR 2,000</strong>
+          </div>
+
+          <div class="summary-row total-row">
+            <span>Total Amount</span>
+            <strong id="co-total">PKR 0</strong>
+          </div>
+
+          <div style="margin-top: 28px;">
+            <button type="button" id="btn-confirm-whatsapp-order" class="btn-whatsapp-confirm">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.07 16.3C4.24 14.98 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.65 7.89 8.02 8.48 8.02 9.69C8.02 10.9 8.9 12.07 9.02 12.24C9.15 12.4 10.74 14.86 13.18 15.91C13.76 16.16 14.21 16.31 14.56 16.42C15.14 16.61 15.67 16.58 16.09 16.52C16.56 16.45 17.53 15.93 17.73 15.36C17.94 14.79 17.94 14.3 17.88 14.2C17.82 14.1 17.65 14.04 17.39 13.91C17.13 13.79 15.86 13.16 15.63 13.08C15.39 12.99 15.22 12.95 15.05 13.2C14.88 13.45 14.39 14.04 14.24 14.2C14.09 14.37 13.95 14.4 13.69 14.27C13.43 14.15 12.6 13.87 11.61 12.99C10.84 12.3 10.32 11.45 10.17 11.2C10.02 10.95 10.15 10.81 10.28 10.68C10.4 10.56 10.55 10.37 10.68 10.22C10.81 10.07 10.85 9.96 10.94 9.79C11.03 9.62 10.98 9.48 10.92 9.35C10.86 9.23 10.37 8.03 10.17 7.54C9.97 7.07 9.77 7.13 9.62 7.12C9.48 7.12 9.31 7.12 9.14 7.12L9.53 7.34Z"/></svg>
+              Confirm Order on WhatsApp
+            </button>
+          </div>
+
+          <p style="text-align: center; font-size: 0.75rem; color: var(--color-taupe); margin-top: 14px;">
+            A pre-formatted WhatsApp order message will open directly in a new window.
+          </p>
+        </aside>
+
+      </div>
+
+      <!-- ==================== ORDER SUCCESS SCREEN (Shown post-order) ==================== -->
+      <div id="order-success-container" class="order-success-screen" style="display: none;">
+        <div class="success-check-icon">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h1 style="font-size: 2.25rem; margin-bottom: 8px;">Your Order Is Ready</h1>
+        <div class="order-ref-pill" id="success-order-ref">NST-2026-0001</div>
+        <p style="font-size: 1.0625rem; color: var(--color-muted-text); line-height: 1.7; max-width: 520px; margin: 0 auto 32px;">
+          We've prepared your order details for WhatsApp. Please send the message in WhatsApp to confirm your order with Nestora.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="shop.html" class="btn btn-primary" style="padding: 14px 28px;">Continue Shopping</a>
+          <a href="index.html" class="btn btn-secondary" style="padding: 14px 28px;">Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <img src="assets/logo/logo-light.svg" alt="Nestora" style="height: 38px;">
+          <p>Thoughtfully designed furniture that brings comfort, character and timeless style to every space.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Living+Room">Living Room</a></li>
+            <li><a href="shop.html?category=Bedroom">Bedroom</a></li>
+            <li><a href="shop.html?category=Dining">Dining</a></li>
+            <li><a href="shop.html?category=Office">Office</a></li>
+            <li><a href="shop.html?category=Outdoor">Outdoor</a></li>
+            <li><a href="shop.html?category=Storage">Storage</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#faq-heading">FAQs</a></li>
+            <li><a href="contact.html">Delivery Information</a></li>
+            <li><a href="contact.html">Returns &amp; Warranty</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="index.html#why-heading">Why Nestora</a></li>
+            <li><a href="about.html">Material Craft</a></li>
+            <li><a href="contact.html">Showroom Visit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://wa.me/923001234567" target="_blank" rel="noopener">WhatsApp Concierge</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nestora. All rights reserved. Demo e-commerce experience.</p>
+        <div class="footer-social-row">
+          <span>Safe WhatsApp Ordering Enabled</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true">
+    <div class="search-container">
+      <div class="search-header-row">
+        <input type="text" id="site-search-input" class="search-input-field" placeholder="Search sofas, beds, tables..." autocomplete="off">
+        <button type="button" id="btn-close-search" class="btn-close-search">&times;</button>
+      </div>
+      <div id="search-results-grid" class="search-results-grid"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Checkout Controller & WhatsApp Flow
+    document.addEventListener("DOMContentLoaded", () => {
+      const itemsListContainer = document.getElementById("checkout-items-list");
+      const subtotalEl = document.getElementById("co-subtotal");
+      const deliveryEl = document.getElementById("co-delivery");
+      const totalEl = document.getElementById("co-total");
+      const confirmBtn = document.getElementById("btn-confirm-whatsapp-order");
+
+      const activeView = document.getElementById("checkout-active-view");
+      const successView = document.getElementById("order-success-container");
+      const successRefEl = document.getElementById("success-order-ref");
+
+      // Verify cart has items
+      const { items, subtotal, delivery, total } = getCartTotals();
+
+      if (items.length === 0) {
+        itemsListContainer.innerHTML = `
+          <div style="text-align: center; padding: 20px;">
+            <p style="color: var(--color-muted-text); margin-bottom: 12px;">Your cart is empty.</p>
+            <a href="shop.html" class="btn btn-secondary">Browse Catalogue</a>
+          </div>
+        `;
+        subtotalEl.textContent = formatPKR(0);
+        deliveryEl.textContent = formatPKR(0);
+        totalEl.textContent = formatPKR(0);
+        confirmBtn.disabled = true;
+        confirmBtn.style.opacity = "0.5";
+        confirmBtn.style.cursor = "not-allowed";
+        return;
+      }
+
+      // Populate summary items
+      itemsListContainer.innerHTML = items.map(item => `
+        <div style="display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--color-border-light); align-items: center;">
+          <img src="${item.image}" alt="${item.name}" style="width: 56px; height: 56px; border-radius: var(--radius-sm); object-fit: cover;">
+          <div style="flex-grow: 1;">
+            <h4 style="font-family: var(--font-serif); font-size: 0.9375rem; margin-bottom: 2px;">${item.name}</h4>
+            <span style="font-size: 0.75rem; color: var(--color-taupe);">${item.color}${item.size && item.size !== 'Standard' ? ` • ${item.size}` : ''} • Qty: ${item.qty}</span>
+          </div>
+          <span style="font-size: 0.875rem; font-weight: 600;">${formatPKR(item.price * item.qty)}</span>
+        </div>
+      `).join("");
+
+      subtotalEl.textContent = formatPKR(subtotal);
+      deliveryEl.textContent = formatPKR(delivery);
+      totalEl.textContent = formatPKR(total);
+
+      // Confirmation button click handler
+      confirmBtn.addEventListener("click", () => {
+        // Validation
+        const fullName = document.getElementById("cust-name").value.trim();
+        const email = document.getElementById("cust-email").value.trim();
+        const phone = document.getElementById("cust-phone").value.trim();
+        const whatsapp = document.getElementById("cust-whatsapp").value.trim();
+        const city = document.getElementById("cust-city").value.trim();
+        const area = document.getElementById("cust-area").value.trim();
+        const address = document.getElementById("cust-address").value.trim();
+        const notes = document.getElementById("cust-notes").value.trim();
+
+        if (!fullName || !phone || !city || !area || !address) {
+          showToast("Please fill in all required customer details (*)", "error");
+          // Focus first empty
+          if (!fullName) document.getElementById("cust-name").focus();
+          else if (!phone) document.getElementById("cust-phone").focus();
+          else if (!city) document.getElementById("cust-city").focus();
+          else if (!area) document.getElementById("cust-area").focus();
+          else if (!address) document.getElementById("cust-address").focus();
+          return;
+        }
+
+        const orderNumber = generateOrderNumber();
+
+        const orderDetails = {
+          orderNumber,
+          customer: {
+            fullName,
+            email,
+            phone,
+            whatsapp,
+            city,
+            area,
+            address,
+            notes
+          },
+          items,
+          subtotal,
+          delivery,
+          total
+        };
+
+        // Trigger WhatsApp transmission
+        sendWhatsAppOrder(orderDetails);
+
+        // Show Toast Notification
+        showToast("✓ Order details prepared for WhatsApp!");
+
+        // Switch to Order Success Screen
+        activeView.style.display = "none";
+        successRefEl.textContent = orderNumber;
+        successView.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Clear Cart from localStorage now that order is prepared
+        clearCart();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,293 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop Furniture — NESTORA</title>
-<meta name="description" content="Browse the full NESTORA furniture catalog — sofas, chairs, tables, beds, dining, storage and décor.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Furniture | Nestora</title>
+  <meta name="description" content="Explore Nestora's complete furniture catalogue. Filter by room, material, price range and style, and confirm your order through WhatsApp.">
+  
+  <meta property="og:title" content="Shop Modern Furniture | Nestora">
+  <meta property="og:description" content="Thoughtfully designed furniture for living, dining, bedroom and office spaces.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav-bar">
-    <a href="index.html" class="logo">NESTORA</a>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="shop.html" class="is-active">Shop</a>
-      <a href="shop.html">Collections</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <form class="nav-search" role="search" onsubmit="event.preventDefault();">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" id="nav-search-input" placeholder="Search furniture">
-      </form>
-      <button class="btn-icon cart-btn" data-cart-open aria-label="Open cart">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        <span class="cart-count" data-cart-count>0</span>
-      </button>
-      <a class="btn-icon" href="https://wa.me/923000000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.51 3.62 1.4 5.12L2 22l5.13-1.5a9.87 9.87 0 0 0 4.91 1.31h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2zm0 18.05h-.01a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.06.89.9-2.98-.19-.31a8.1 8.1 0 1 1 15.02-4.32 8.16 8.16 0 0 1-8.23 8.03z"/></svg>
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="header-brand" aria-label="Nestora Home">
+        <img src="assets/logo/logo.svg" alt="Nestora - Furniture That Feels Like Home" class="header-logo-img">
       </a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+
+      <nav class="header-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="shop.html?category=Living+Room" class="nav-link">Living Room</a></li>
+          <li><a href="shop.html?category=Bedroom" class="nav-link">Bedroom</a></li>
+          <li><a href="shop.html?category=Dining" class="nav-link">Dining</a></li>
+          <li><a href="shop.html?category=Office" class="nav-link">Office</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-action-btn btn-open-search" aria-label="Open Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <a href="shop.html?wishlist=true" class="icon-action-btn" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="badge-count wishlist-count-badge">0</span>
+        </a>
+
+        <a href="cart.html" class="icon-action-btn cart-icon-btn" aria-label="View Shopping Cart">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-text-count" style="font-size: 0.8125rem; font-weight: 600;">Cart (0)</span>
+        </a>
+
+        <a href="shop.html" class="btn btn-primary header-cta-btn" style="padding: 10px 20px; font-size: 0.8125rem;">Shop Now</a>
+
+        <button type="button" class="nav-toggle-btn" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="mobile-nav-scrim"></div>
-<nav class="mobile-nav">
-  <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="shop.html">Collections</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <div class="mobile-nav-foot">DHA Phase 6, Karachi, Pakistan<br>+92 300 0000000</div>
-</nav>
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <img src="assets/logo/logo.svg" alt="Nestora" style="height: 34px;">
+      <button type="button" class="btn-close-mobile-nav" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop All Furniture</a>
+      <a href="shop.html?category=Living+Room">Living Room</a>
+      <a href="shop.html?category=Bedroom">Bedroom</a>
+      <a href="shop.html?category=Dining">Dining</a>
+      <a href="shop.html?category=Office">Office</a>
+      <a href="shop.html?category=Outdoor">Outdoor</a>
+      <a href="shop.html?category=Storage">Storage</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact &amp; Showroom</a>
+    </nav>
+  </aside>
 
-<div class="cart-drawer-scrim" data-cart-scrim></div>
-<aside class="cart-drawer" data-cart-drawer aria-hidden="true">
-  <div class="cart-drawer-head">
-    <h3>Your Cart</h3>
-    <button class="cart-drawer-close" data-cart-close aria-label="Close cart">&times;</button>
-  </div>
-  <div class="cart-drawer-body" data-cart-drawer-body></div>
-  <div class="cart-drawer-foot">
-    <div class="cart-drawer-subtotal"><span>Subtotal</span><span data-cart-subtotal>Rs. 0</span></div>
-    <a href="cart.html" class="btn btn-outline btn-block">View Cart</a>
-    <button class="btn btn-whatsapp btn-block" data-cart-whatsapp>Order on WhatsApp</button>
-  </div>
-</aside>
-
-<main>
-  <div class="page-header">
+  <!-- ==================== PAGE BANNER ==================== -->
+  <div class="page-banner">
     <div class="container">
-      <h1>Shop Furniture</h1>
-      <p>Every piece in the NESTORA collection, in one place. Filter by room, price or search for something specific.</p>
+      <span class="section-tagline">Complete Catalogue</span>
+      <h1 id="shop-page-title">Shop Furniture</h1>
+      <p id="shop-page-subtitle">Pieces created with honest timber, supportive foam, and enduring character.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span id="breadcrumb-current">Shop</span>
+      </nav>
     </div>
   </div>
 
-  <div class="container" style="padding-top:40px;padding-bottom:100px;">
-    <button class="btn btn-outline btn-sm mobile-filter-toggle" id="mobile-filter-toggle" style="margin-bottom:20px;">Filter &amp; Sort</button>
-    <div class="shop-layout">
-      <aside class="filter-panel" id="filter-panel">
-        <div class="filter-group">
-          <h4>Search</h4>
-          <div class="shop-search">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="search" id="search-input" placeholder="Search products">
-          </div>
-        </div>
-        <div class="filter-group">
-          <h4>Category</h4>
-          <div id="category-filters"></div>
-        </div>
-        <div class="filter-group">
-          <h4>Max Price</h4>
-          <input type="range" min="8900" max="149900" step="1000" value="149900" class="price-range" id="price-range">
-          <div class="price-range-value" id="price-range-value">Up to Rs. 149,900</div>
-        </div>
-      </aside>
+  <!-- ==================== MAIN SHOPPING SECTION ==================== -->
+  <main class="shop-section">
+    <div class="container">
+      <div class="shop-layout">
+        
+        <!-- Filter Drawer Backdrop for Mobile -->
+        <div class="filter-drawer-backdrop" id="filter-drawer-backdrop"></div>
 
-      <div>
-        <div class="shop-toolbar">
-          <span class="shop-count" id="result-count">18 products</span>
-          <select class="sort-select" id="sort-select">
-            <option value="default">Sort: Featured</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="name-asc">Name: A–Z</option>
-          </select>
-        </div>
-        <div class="product-grid" id="shop-grid"></div>
+        <!-- SIDEBAR FILTERS (On Mobile, Drawer) -->
+        <aside class="shop-sidebar" id="shop-sidebar-filters">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="font-size: 1.125rem;">Filters</h3>
+            <button type="button" id="btn-reset-filters" style="font-size: 0.8125rem; color: var(--color-walnut); font-weight: 600; text-decoration: underline;">Reset All</button>
+          </div>
+
+          <!-- Categories Filter -->
+          <div class="filter-block">
+            <h4 class="filter-title">Categories</h4>
+            <div class="category-filter-list" id="category-filter-group">
+              <button type="button" class="cat-filter-btn active" data-category="all">
+                <span>All Furniture</span>
+                <span class="cat-count">(14)</span>
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="Living Room">
+                <span>Living Room</span>
+                <span class="cat-count">(5)</span>
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="Bedroom">
+                <span>Bedroom</span>
+                <span class="cat-count">(2)</span>
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="Dining">
+                <span>Dining</span>
+                <span class="cat-count">(2)</span>
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="Office">
+                <span>Office</span>
+                <span class="cat-count">(2)</span>
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="Outdoor">
+                <span>Outdoor</span>
+                <span class="cat-count">(1)</span>
+              </button>
+              <button type="button" class="cat-filter-btn" data-category="Storage">
+                <span>Storage</span>
+                <span class="cat-count">(2)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Price Range Filter -->
+          <div class="filter-block">
+            <h4 class="filter-title">Price Range</h4>
+            <input type="range" id="price-slider" class="price-slider" min="10000" max="160000" step="5000" value="160000">
+            <div class="price-range-inputs">
+              <span>Up to:</span>
+              <strong id="price-slider-val" style="color: var(--color-walnut-dark); font-weight: 700;">PKR 160,000</strong>
+            </div>
+          </div>
+
+          <!-- Material Filter -->
+          <div class="filter-block">
+            <h4 class="filter-title">Material</h4>
+            <div class="checkbox-filter-list" id="material-filter-group">
+              <label class="checkbox-label">
+                <input type="checkbox" value="Wood" class="mat-checkbox">
+                <span>Wood</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="Engineered Wood" class="mat-checkbox">
+                <span>Engineered Wood</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="Fabric" class="mat-checkbox">
+                <span>Fabric</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="Metal" class="mat-checkbox">
+                <span>Metal</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" value="Mixed Materials" class="mat-checkbox">
+                <span>Mixed Materials</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="filter-block">
+            <h4 class="filter-title">Availability</h4>
+            <div class="checkbox-filter-list">
+              <label class="checkbox-label">
+                <input type="radio" name="availability" value="all" checked class="avail-radio" style="accent-color: var(--color-walnut);">
+                <span>All Pieces</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="radio" name="availability" value="in-stock" class="avail-radio" style="accent-color: var(--color-walnut);">
+                <span>In Stock</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="radio" name="availability" value="made-to-order" class="avail-radio" style="accent-color: var(--color-walnut);">
+                <span>Made to Order</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; display: none;" id="close-mobile-filters-row">
+            <button type="button" class="btn btn-primary" id="btn-close-mobile-filters" style="width: 100%;">Apply Filters</button>
+          </div>
+        </aside>
+
+        <!-- PRODUCTS COLUMN -->
+        <section class="shop-products-column">
+          <!-- Controls Bar -->
+          <div class="shop-controls-bar">
+            <button type="button" class="btn-mobile-filter-open" id="btn-open-mobile-filters">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+              Filter Pieces
+            </button>
+
+            <div class="shop-results-count" id="shop-results-count-text">
+              Showing all 14 furniture pieces
+            </div>
+
+            <div class="shop-sort-wrap">
+              <label for="shop-sort-select">Sort By:</label>
+              <select id="shop-sort-select" class="shop-sort-select">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="best-selling">Best Selling</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Product Grid Container -->
+          <div class="product-grid" id="shop-product-grid">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </section>
+
       </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <img src="assets/logo/logo-light.svg" alt="Nestora" style="height: 38px;">
+          <p>Thoughtfully designed furniture that brings comfort, character and timeless style to every space.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Living+Room">Living Room</a></li>
+            <li><a href="shop.html?category=Bedroom">Bedroom</a></li>
+            <li><a href="shop.html?category=Dining">Dining</a></li>
+            <li><a href="shop.html?category=Office">Office</a></li>
+            <li><a href="shop.html?category=Outdoor">Outdoor</a></li>
+            <li><a href="shop.html?category=Storage">Storage</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html#faq-heading">FAQs</a></li>
+            <li><a href="contact.html">Delivery Information</a></li>
+            <li><a href="contact.html">Returns &amp; Warranty</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="index.html#why-heading">Why Nestora</a></li>
+            <li><a href="about.html">Material Craft</a></li>
+            <li><a href="contact.html">Showroom Visit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://wa.me/923001234567" target="_blank" rel="noopener">WhatsApp Concierge</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nestora. All rights reserved. Demo e-commerce experience.</p>
+        <div class="footer-social-row">
+          <span>Safe WhatsApp Ordering Enabled</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923001234567?text=Hello%20Nestora%2C%20I%20have%20an%20inquiry%20about%20your%20furniture." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Chat with Nestora on WhatsApp">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.07 16.3C4.24 14.98 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.65 7.89 8.02 8.48 8.02 9.69C8.02 10.9 8.9 12.07 9.02 12.24C9.15 12.4 10.74 14.86 13.18 15.91C13.76 16.16 14.21 16.31 14.56 16.42C15.14 16.61 15.67 16.58 16.09 16.52C16.56 16.45 17.53 15.93 17.73 15.36C17.94 14.79 17.94 14.3 17.88 14.2C17.82 14.1 17.65 14.04 17.39 13.91C17.13 13.79 15.86 13.16 15.63 13.08C15.39 12.99 15.22 12.95 15.05 13.2C14.88 13.45 14.39 14.04 14.24 14.2C14.09 14.37 13.95 14.4 13.69 14.27C13.43 14.15 12.6 13.87 11.61 12.99C10.84 12.3 10.32 11.45 10.17 11.2C10.02 10.95 10.15 10.81 10.28 10.68C10.4 10.56 10.55 10.37 10.68 10.22C10.81 10.07 10.85 9.96 10.94 9.79C11.03 9.62 10.98 9.48 10.92 9.35C10.86 9.23 10.37 8.03 10.17 7.54C9.97 7.07 9.77 7.13 9.62 7.12C9.48 7.12 9.31 7.12 9.14 7.12L9.53 7.34Z"/>
+    </svg>
+    <span class="floating-whatsapp-tooltip">Chat with Nestora</span>
+  </a>
+
+  <!-- Back to top -->
+  <button type="button" id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true">
+    <div class="search-container">
+      <div class="search-header-row">
+        <input type="text" id="site-search-input" class="search-input-field" placeholder="Search sofas, beds, tables..." autocomplete="off">
+        <button type="button" id="btn-close-search" class="btn-close-search">&times;</button>
+      </div>
+      <div id="search-results-grid" class="search-results-grid"></div>
     </div>
   </div>
-</main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">NESTORA</a>
-        <p>Furniture That Feels Like Home.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-          <a href="https://wa.me/923000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.51 3.62 1.4 5.12L2 22l5.13-1.5a9.87 9.87 0 0 0 4.91 1.31h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2z"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="shop.html?category=Sofas">Sofas</a></li>
-          <li><a href="shop.html?category=Beds">Beds</a></li>
-          <li><a href="shop.html?category=Dining">Dining</a></li>
-          <li><a href="shop.html?category=Chairs">Chairs</a></li>
-          <li><a href="shop.html?category=Tables">Tables</a></li>
-          <li><a href="shop.html?category=Décor">Décor</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="index.html#showroom">Showroom</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html">FAQs</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>Karachi, Pakistan</li>
-          <li>+92 300 0000000</li>
-          <li>hello@nestora.example</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; <span data-year>2026</span> NESTORA Furniture. Demo site — for presentation purposes only.</span>
-      <span>Made for a Pakistani home decor business</span>
+  <!-- Quick View Modal -->
+  <div id="quick-view-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn">&times;</button>
+      <div class="modal-body-container"></div>
     </div>
   </div>
-</footer>
 
-<script src="js/products.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/main.js"></script>
-<script>
-(function () {
-  const CATEGORIES = ["All", "Sofas", "Chairs", "Tables", "Beds", "Dining", "Storage", "Décor"];
-  const params = new URLSearchParams(window.location.search);
-  const state = {
-    category: params.get("category") || "All",
-    query: params.get("q") || "",
-    maxPrice: 149900,
-    sort: "default"
-  };
+  <script src="js/script.js"></script>
+  <script>
+    // Shop Filtering & Sorting Controller
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("shop-product-grid");
+      const resultsCountText = document.getElementById("shop-results-count-text");
+      const priceSlider = document.getElementById("price-slider");
+      const priceValDisplay = document.getElementById("price-slider-val");
+      const sortSelect = document.getElementById("shop-sort-select");
+      const catButtons = document.querySelectorAll("#category-filter-group .cat-filter-btn");
+      const matCheckboxes = document.querySelectorAll(".mat-checkbox");
+      const availRadios = document.querySelectorAll(".avail-radio");
+      const resetBtn = document.getElementById("btn-reset-filters");
+      const mobileFilterOpen = document.getElementById("btn-open-mobile-filters");
+      const mobileFilterClose = document.getElementById("btn-close-mobile-filters");
+      const sidebar = document.getElementById("shop-sidebar-filters");
 
-  const catFilterEl = document.getElementById("category-filters");
-  catFilterEl.innerHTML = CATEGORIES.map((c) => `
-    <label class="filter-option">
-      <input type="radio" name="category" value="${c}" ${c === state.category ? "checked" : ""}>
-      ${c}
-    </label>
-  `).join("");
+      // Check query params
+      const urlParams = new URLSearchParams(window.location.search);
+      let selectedCategory = urlParams.get("category") || "all";
+      const isWishlistMode = urlParams.get("wishlist") === "true";
+      let maxPrice = 160000;
+      let selectedMaterials = [];
+      let selectedAvailability = "all";
+      let currentSort = "featured";
 
-  const searchInput = document.getElementById("search-input");
-  const navSearchInput = document.getElementById("nav-search-input");
-  searchInput.value = state.query;
-  navSearchInput.value = state.query;
+      if (isWishlistMode) {
+        document.getElementById("shop-page-title").textContent = "Your Wishlist";
+        document.getElementById("shop-page-subtitle").textContent = "Saved furniture pieces you love.";
+        document.getElementById("breadcrumb-current").textContent = "Wishlist";
+      } else if (selectedCategory && selectedCategory !== "all") {
+        document.getElementById("shop-page-title").textContent = selectedCategory + " Furniture";
+        document.getElementById("breadcrumb-current").textContent = selectedCategory;
+      }
 
-  const priceRange = document.getElementById("price-range");
-  const priceRangeValue = document.getElementById("price-range-value");
-  const sortSelect = document.getElementById("sort-select");
-  const grid = document.getElementById("shop-grid");
-  const resultCount = document.getElementById("result-count");
-
-  function render() {
-    let items = NESTORA_PRODUCTS.filter((p) => {
-      const matchesCategory = state.category === "All" || p.category === state.category;
-      const matchesQuery =
-        !state.query ||
-        p.name.toLowerCase().includes(state.query.toLowerCase()) ||
-        p.category.toLowerCase().includes(state.query.toLowerCase());
-      const matchesPrice = p.price <= state.maxPrice;
-      return matchesCategory && matchesQuery && matchesPrice;
-    });
-
-    if (state.sort === "price-asc") items.sort((a, b) => a.price - b.price);
-    if (state.sort === "price-desc") items.sort((a, b) => b.price - a.price);
-    if (state.sort === "name-asc") items.sort((a, b) => a.name.localeCompare(b.name));
-
-    resultCount.textContent = `${items.length} product${items.length === 1 ? "" : "s"}`;
-
-    if (items.length === 0) {
-      grid.innerHTML = `<div class="empty-state">No products match your filters. Try widening your search.</div>`;
-      return;
-    }
-
-    grid.innerHTML = items.map((p) => `
-      <div class="product-card">
-        <div class="product-media">
-          <a href="product.html?id=${p.id}">
-            <img src="${p.img}" alt="${p.name}" loading="lazy">
-          </a>
-          <button class="wishlist-btn" data-wishlist="${p.id}" aria-label="Add to wishlist">
-            <svg viewBox="0 0 24 24"><path d="M12 21s-6.7-4.35-9.3-8.2C.9 9.8 2 6 5.4 5c2-.6 3.7.3 4.6 1.8C10.9 5.3 12.6 4.4 14.6 5c3.4 1 4.5 4.8 2.7 7.8C18.7 16.65 12 21 12 21z"/></svg>
-          </button>
-          <div class="product-quickadd">
-            <button class="btn btn-primary btn-block btn-sm" data-add-to-cart="${p.id}">Add to Cart</button>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-category">${p.category}</div>
-          <h3 class="product-name"><a href="product.html?id=${p.id}">${p.name}</a></h3>
-          <div class="product-price-row">
-            <span class="product-price">${nestoraFormatPrice(p.price)}</span>
-            <a href="product.html?id=${p.id}" class="product-view">View Details</a>
-          </div>
-        </div>
-      </div>
-    `).join("");
-
-    grid.querySelectorAll("[data-add-to-cart]").forEach((btn) => {
-      btn.addEventListener("click", () => nestoraAddToCart(btn.dataset.addToCart, 1));
-    });
-    grid.querySelectorAll("[data-wishlist]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.classList.toggle("is-active");
-        nestoraShowToast(btn.classList.contains("is-active") ? "Added to wishlist" : "Removed from wishlist");
+      // Activate category button based on URL
+      catButtons.forEach(btn => {
+        if (btn.getAttribute("data-category") === selectedCategory) {
+          catButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+        }
       });
+
+      function applyFilters() {
+        let filtered = [...products];
+
+        // Wishlist mode
+        if (isWishlistMode) {
+          const wList = getWishlist();
+          filtered = filtered.filter(p => wList.includes(p.id));
+        }
+
+        // Category
+        if (selectedCategory && selectedCategory !== "all") {
+          filtered = filtered.filter(p => p.category.toLowerCase() === selectedCategory.toLowerCase());
+        }
+
+        // Price
+        filtered = filtered.filter(p => p.price <= maxPrice);
+
+        // Material
+        if (selectedMaterials.length > 0) {
+          filtered = filtered.filter(p => {
+            return selectedMaterials.some(m => p.material.toLowerCase().includes(m.toLowerCase()));
+          });
+        }
+
+        // Availability
+        if (selectedAvailability === "in-stock") {
+          filtered = filtered.filter(p => p.inStock);
+        } else if (selectedAvailability === "made-to-order") {
+          filtered = filtered.filter(p => !p.inStock);
+        }
+
+        // Sorting
+        if (currentSort === "price-low") {
+          filtered.sort((a, b) => a.price - b.price);
+        } else if (currentSort === "price-high") {
+          filtered.sort((a, b) => b.price - a.price);
+        } else if (currentSort === "newest") {
+          filtered.sort((a, b) => (b.badge === "NEW" ? 1 : 0) - (a.badge === "NEW" ? 1 : 0));
+        } else if (currentSort === "best-selling") {
+          filtered.sort((a, b) => (b.badge === "BEST SELLER" ? 1 : 0) - (a.badge === "BEST SELLER" ? 1 : 0));
+        }
+
+        // Render
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            <div class="shop-empty-state">
+              <h3>No products found</h3>
+              <p style="color: var(--color-muted-text); margin: 8px 0 20px;">We couldn't find any furniture matching your exact combination of filters.</p>
+              <button type="button" class="btn btn-secondary" onclick="document.getElementById('btn-reset-filters').click()">Clear All Filters</button>
+            </div>
+          `;
+          resultsCountText.textContent = "Showing 0 pieces";
+        } else {
+          grid.innerHTML = filtered.map(p => renderProductCard(p)).join("");
+          resultsCountText.textContent = `Showing ${filtered.length} piece${filtered.length > 1 ? 's' : ''}`;
+        }
+      }
+
+      // Category click
+      catButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          catButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          selectedCategory = btn.getAttribute("data-category");
+          
+          if (selectedCategory === "all") {
+            document.getElementById("shop-page-title").textContent = "Shop Furniture";
+            document.getElementById("breadcrumb-current").textContent = "Shop";
+          } else {
+            document.getElementById("shop-page-title").textContent = selectedCategory + " Furniture";
+            document.getElementById("breadcrumb-current").textContent = selectedCategory;
+          }
+          applyFilters();
+        });
+      });
+
+      // Price slider
+      priceSlider.addEventListener("input", (e) => {
+        maxPrice = Number(e.target.value);
+        priceValDisplay.textContent = formatPKR(maxPrice);
+        applyFilters();
+      });
+
+      // Materials
+      matCheckboxes.forEach(cb => {
+        cb.addEventListener("change", () => {
+          selectedMaterials = Array.from(matCheckboxes)
+            .filter(c => c.checked)
+            .map(c => c.value);
+          applyFilters();
+        });
+      });
+
+      // Availability
+      availRadios.forEach(rb => {
+        rb.addEventListener("change", (e) => {
+          selectedAvailability = e.target.value;
+          applyFilters();
+        });
+      });
+
+      // Sort
+      sortSelect.addEventListener("change", (e) => {
+        currentSort = e.target.value;
+        applyFilters();
+      });
+
+      // Reset
+      resetBtn.addEventListener("click", () => {
+        selectedCategory = "all";
+        catButtons.forEach(b => b.classList.remove("active"));
+        catButtons[0].classList.add("active");
+
+        priceSlider.value = 160000;
+        maxPrice = 160000;
+        priceValDisplay.textContent = formatPKR(160000);
+
+        matCheckboxes.forEach(c => c.checked = false);
+        selectedMaterials = [];
+
+        availRadios[0].checked = true;
+        selectedAvailability = "all";
+
+        sortSelect.value = "featured";
+        currentSort = "featured";
+
+        applyFilters();
+      });
+
+      // Mobile filter drawer toggles
+      const filterBackdrop = document.getElementById("filter-drawer-backdrop");
+
+      function openMobileFilters() {
+        if (sidebar) sidebar.classList.add("open");
+        if (filterBackdrop) filterBackdrop.classList.add("active");
+        document.body.classList.add("modal-open");
+        const closeRow = document.getElementById("close-mobile-filters-row");
+        if (closeRow) closeRow.style.display = "block";
+      }
+
+      function closeMobileFilters() {
+        if (sidebar) sidebar.classList.remove("open");
+        if (filterBackdrop) filterBackdrop.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      }
+
+      if (mobileFilterOpen) mobileFilterOpen.addEventListener("click", openMobileFilters);
+      if (mobileFilterClose) mobileFilterClose.addEventListener("click", closeMobileFilters);
+      if (filterBackdrop) filterBackdrop.addEventListener("click", closeMobileFilters);
+
+      // Initial filter apply
+      applyFilters();
     });
-  }
-
-  catFilterEl.querySelectorAll('input[name="category"]').forEach((input) => {
-    input.addEventListener("change", (e) => {
-      state.category = e.target.value;
-      render();
-    });
-  });
-
-  let searchTimer;
-  function handleSearchInput(value) {
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => {
-      state.query = value;
-      searchInput.value = value;
-      navSearchInput.value = value;
-      render();
-    }, 150);
-  }
-  searchInput.addEventListener("input", (e) => handleSearchInput(e.target.value));
-  navSearchInput.addEventListener("input", (e) => handleSearchInput(e.target.value));
-
-  priceRange.addEventListener("input", (e) => {
-    state.maxPrice = Number(e.target.value);
-    priceRangeValue.textContent = `Up to ${nestoraFormatPrice(state.maxPrice)}`;
-    render();
-  });
-
-  sortSelect.addEventListener("change", (e) => {
-    state.sort = e.target.value;
-    render();
-  });
-
-  document.getElementById("mobile-filter-toggle").addEventListener("click", () => {
-    document.getElementById("filter-panel").classList.toggle("is-open");
-  });
-
-  render();
-})();
-</script>
+  </script>
 </body>
 </html>
